@@ -3,10 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>jquery-cron : a jQuery plugin</title>
-    <link type="text/css" href="gentleSelect/jquery-gentleSelect.css" rel="stylesheet" />
     <link type="text/css" href="cron/jquery-cron.css" rel="stylesheet" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="gentleSelect/jquery-gentleSelect-min.js"></script>
     <script type="text/javascript" src="cron/jquery-cron.js"></script>
 
     <style>
@@ -35,20 +33,13 @@
                 $('#example1-val').text($(this).cron("value"));
             }
         });
-        $('#example1b').cron({
-            initial: "42 3 * * 5",
-            onChange: function() {
-                $('#example1b-val').text($(this).cron("value"));
-            },
-            useGentleSelect: true
-        });
+
         $('#example2').cron({
             initial: "42 3 * * 5",
             effectOpts: {
                 openEffect: "fade",
                 openSpeed: "slow"
-            },
-            useGentleSelect: true
+            }
         });
         $('#example3').cron({
             initial: "*/5 * * * *",
@@ -58,15 +49,13 @@
             customValues: {
                 "5 Minutes" : "*/5 * * * *",
                 "2 Hours on Weekends" : "0 */2 * * 5,6"
-            },
-            useGentleSelect: true
+            }
         });
         $('#example4').cron({
             initial: "42 3 * * 5",
             onChange: function() {
                 $('#example4-val').text($(this).cron("value"));
-            },
-            useGentleSelect: true
+            }
         });
     });
     </script>
@@ -91,13 +80,7 @@
     <div id='example1'></div>
     <p>Generated cron entry: <span class='example-text' id='example1-val'></span></p>
     </div>
-    
-    Or, with <a href='#option-useGentleSelect'>useGentleSelect</a> enabled:
-    
-    <div class='example'>
-    <div id='example1b'></div>
-    <p>Generated cron entry: <span class='example-text' id='example1b-val'></span></p>
-    </div>
+
 
     <p>
     In addition, the <a href='#option-customvalues'><tt>customValues</tt></a>
@@ -137,11 +120,6 @@
 &lt;script type="text/javascript" src="cron/jquery-cron.js"&gt;&lt;/script&gt;
 
 &lt;link type="text/css" href="cron/jquery-cron.css" rel="stylesheet" /&gt;
-</pre>
-<p>If used with <a href="#option-useGentleSelect"><tt>useGentleSelect</tt></a> you'll also need:</p>
-<pre>
-&lt;script type="text/javascript" src="gentleSelect/jquery-gentleSelect.js"&gt;&lt;/script&gt;
-&lt;link type="text/css" href="gentleSelect/jquery-gentleSelect.css" rel="stylesheet" /&gt;
 </pre>
 <p>
     then attach it to an empty &lt;div&gt; on DOM ready:
